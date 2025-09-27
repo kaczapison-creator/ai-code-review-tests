@@ -393,6 +393,7 @@ function DashboardComponent() {
                     stroke="currentColor"
                     strokeWidth="2"
                   />
+
                   <path
                     d="M4 6l8 5 8-5v2l-8 5-8-5V6z"
                     stroke="currentColor"
