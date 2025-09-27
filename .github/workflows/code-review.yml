@@ -8,6 +8,7 @@ on:
   pull_request:
     types: [opened, reopened, ready_for_review]
   issue_comment:
+
 jobs:
   pr_agent_job:
     if: ${{ github.event.sender.type != 'Bot' }}
@@ -19,6 +20,8 @@ jobs:
       contents: write
 
     steps:
+      - uses: actions/checkout@v3
+
       - name: Run Qodo PR Agent
         uses: qodo-ai/pr-agent@main
         env:
