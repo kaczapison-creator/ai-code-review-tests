@@ -1,10 +1,6 @@
 name: Qodo PR Agent
 
 on:
-  push:
-    branches:
-      - master
-      - "feat/**"
   pull_request:
     types: [opened, reopened, ready_for_review, synchronize]
   issue_comment:
