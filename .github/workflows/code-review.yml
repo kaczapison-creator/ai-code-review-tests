@@ -6,7 +6,7 @@ on:
       - master
       - "feat/**"
   pull_request:
-    types: [opened, reopened, ready_for_review]
+    types: [opened, reopened, ready_for_review, synchronize]
   issue_comment:
 
 jobs:
@@ -30,3 +30,4 @@ jobs:
           github_action_config.auto_review: "true"
           github_action_config.auto_describe: "true"
           github_action_config.auto_improve: "true"
+          github_action_config.pr_actions: '[ "opened", "reopened", "ready_for_review", "synchronize" ]'
