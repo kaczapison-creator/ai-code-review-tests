@@ -10,6 +10,8 @@ import {
   ArcElement,
 } from "chart.js";
 import { Bar, Pie } from "react-chartjs-2";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import TablePageComponent from "./TablePage";
 import "./App.css";
 
 ChartJS.register(
@@ -28,7 +30,7 @@ interface ChartData {
   color: string;
 }
 
-function App() {
+function DashboardComponent() {
   const [activeTab, setActiveTab] = useState("overview");
 
   const salesDataArray: ChartData[] = [
@@ -196,6 +198,12 @@ function App() {
           >
             Raporty
           </button>
+          <Link
+            to="/users"
+            className="ml-4 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors"
+          >
+            Użytkownicy
+          </Link>
         </nav>
       </header>
 
@@ -402,6 +410,17 @@ function App() {
         </div>
       </main>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<DashboardComponent />} />
+        <Route path="/users" element={<TablePageComponent />} />
+      </Routes>
+    </Router>
   );
 }
 
